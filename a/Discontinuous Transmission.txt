@@ -1,0 +1,1 @@
+Discontinuous transmission (DTX) is a means by which a mobile telephone is temporarily shut off or muted while the phone lacks a voice input.

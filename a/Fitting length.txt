@@ -1,0 +1,1 @@
+In mathematics, specifically in the area of algebra known as group theory, the Fitting length (or nilpotent length) measures how far a solvable group is from being nilpotent. The concept is named after Hans Fitting, due to his investigations of nilpotent normal subgroups.

@@ -1,0 +1,2 @@
+In the field of gesture recognition and image processing, finger tracking is a high-resolution technique developed in 1969 that is employed to know the consecutive position of the fingers of the user and hence represent objects in 3D.
+In addition to that, the finger tracking technique is used as a tool of the computer, acting as an external device in our computer, similar to a keyboard and a mouse.

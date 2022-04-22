@@ -1,0 +1,4 @@
+Fireblade (acquired by StackPath) is an Israeli company founded in 2008. It developed the first cloud-based bot-management solution and a multi-tier SaaS security suite powered by reputational and behavioral firewalls, to protect websites against DDoS attacks, web application attacks and a variety of automated attacks, improving website health, security and performance.
+It offers integration with cPanel and WHM Fireblade was founded by Shay Rapaport and Erez Azaria (CEO and CTO respectively).
+Fireblade's extensive bot management solution offers protection against credential stuffing, brute force attacks, application layer DDoS attacks, web spam and scraping  It also offers dynamic performance optimization, a 30 Points of Presence tier-1 CDN and other tools.
+

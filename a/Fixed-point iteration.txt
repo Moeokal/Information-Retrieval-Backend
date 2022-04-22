@@ -1,0 +1,153 @@
+In numerical analysis, fixed-point iteration is a method of computing fixed points of a function.
+More specifically, given a  function 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   defined on the real numbers with real values and given a point 
+  
+    
+      
+        
+          x
+          
+            0
+          
+        
+      
+    
+    {\displaystyle x_{0}}
+   in the domain of 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  , the fixed-point iteration is
+
+  
+    
+      
+        
+          x
+          
+            n
+            +
+            1
+          
+        
+        =
+        f
+        (
+        
+          x
+          
+            n
+          
+        
+        )
+        ,
+        
+        n
+        =
+        0
+        ,
+        1
+        ,
+        2
+        ,
+        …
+      
+    
+    {\displaystyle x_{n+1}=f(x_{n}),\,n=0,1,2,\dots }
+  which gives rise to the sequence 
+  
+    
+      
+        
+          x
+          
+            0
+          
+        
+        ,
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        …
+      
+    
+    {\displaystyle x_{0},x_{1},x_{2},\dots }
+   which is hoped to converge to a point 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  . If 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   is continuous, then one can prove that the obtained 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+   is a fixed point of 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  , i.e.,
+
+  
+    
+      
+        f
+        (
+        x
+        )
+        =
+        x
+        .
+        
+      
+    
+    {\displaystyle f(x)=x.\,}
+  More generally, the function 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   can be defined on any metric space with values in that same space.

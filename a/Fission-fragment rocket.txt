@@ -1,0 +1,1 @@
+The fission-fragment rocket is a rocket engine design that directly harnesses hot nuclear fission products for thrust, as opposed to using a separate fluid as working mass. The design can, in theory, produce very high specific impulse while still being well within the abilities of current technologies.

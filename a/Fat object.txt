@@ -1,0 +1,4 @@
+Fat object may refer to:
+
+Fat object (geometry), a multi-dimensional geometrical object in mathematics
+Fat object (binary), a fat binary type of file in computing
