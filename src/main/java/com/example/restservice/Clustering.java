@@ -19,11 +19,11 @@ import java.util.*;
 public class Clustering {
 
 
-    static ArrayList<ArrayList<String>> clusters = new ArrayList<>();
+    private static ArrayList<ArrayList<String>> clusters = new ArrayList<>();
 
 
-    static int[] docsid;
-    static HashMap<String, Integer> clust;
+    private static int[] docsid;
+    private static HashMap<String, Integer> clust;
 
 
     private static Indexing index = Indexing.getInstance();
@@ -31,7 +31,7 @@ public class Clustering {
 
 
     private static Set<String> terms = new HashSet<>();
-    /*
+
     private static RealVector v1=null;
     private static RealVector v2=null;
     private static RealVector v3=null;
@@ -42,10 +42,15 @@ public class Clustering {
     private static RealVector v8=null;
     private static RealVector v9=null;
     private static RealVector v10=null;
-    */
 
 
+    /**
+     * cleares and makes the clusters ready for the next search
+     */
     private static void setup(){
+        if(!(clusters.isEmpty())){
+            clusters.clear();
+        }
         clusters.add(new ArrayList<>());
         clusters.add(new ArrayList<>());
         clusters.add(new ArrayList<>());
@@ -53,10 +58,16 @@ public class Clustering {
         clusters.add(new ArrayList<>());
     }
 
+    /**
+     * calculates the term Frequencies of the document
+     * @param docId ID of the document
+     * @return a realvector that saves the statistics of the document
+     * @throws IOException
+     */
     static RealVector getTermFrequencies(int docId)
             throws IOException {
-        Terms vector = query.reader.getTermVector(docId, "Main");
-        double n=query.reader.getDocCount("Main");
+        Terms vector = query.getReader().getTermVector(docId, "Main");
+        double n=query.getReader().getDocCount("Main");
         TermsEnum termsEnum;
         termsEnum = vector.iterator();
         Map<String, Integer> frequencies = new HashMap<>();
@@ -82,7 +93,7 @@ public class Clustering {
                 int index=v.indexOf(termm);
                 Term termInstance=v.get(index);
                 tf=g.get(index);
-                double docCount = query.reader.docFreq(termInstance);
+                double docCount = query.getReader().docFreq(termInstance);
                 double z=n/docCount;
                 idf=Math.log10(z);
                 tfidf=tf*idf;
@@ -95,8 +106,13 @@ public class Clustering {
     }
 
 
+    /**
+     * adds all the terms of the document to the list of all terms
+     * @param docId the document to check
+     * @throws IOException
+     */
     static void addTerms(int docId) throws IOException {
-        Terms vector = query.reader.getTermVector(docId, "Main");
+        Terms vector = query.getReader().getTermVector(docId, "Main");
         TermsEnum termsEnum;
         termsEnum = vector.iterator();
         BytesRef text;
@@ -106,9 +122,13 @@ public class Clustering {
         }
     }
 
-
+    /**
+     * Creates a csv file of all the documents and their term frequnecies for each term from the list
+     * of all terms to represent the docs as vectors in a n-dimensional room with n=number of terms
+     * @throws IOException
+     */
     public static void createCSV() throws IOException {
-
+/*
         ArrayList<String[]> sss= new ArrayList<>(10);
         for(int i=0;i<10;i++){
             addTerms(docsid[i]);
@@ -118,17 +138,17 @@ public class Clustering {
             s=s.substring(1, s.length()-1);
             String[] ss = s.split(", ");
             sss.add(ss);
-        }
+        }*/
 
-        /*
+
         addTerms(docsid[0]);
         v1 = getTermFrequencies(docsid[0]);
         double[] arr1 = v1.toArray();
         String s1 = Arrays.toString(arr1);
         s1=s1.substring(1, s1.length()-1);
         String[] ss1 = s1.split(", ");
-        */
-        /*
+
+
         addTerms(docsid[1]);
         addTerms(docsid[2]);
         addTerms(docsid[3]);
@@ -197,9 +217,9 @@ public class Clustering {
         String s10 = Arrays.toString(arr10);
         s10=s10.substring(1, s10.length()-1);
         String[] ss10 = s10.split(", ");
-*/
 
-        File file2 = new File(index.pathWrite+"\\test.csv");
+
+        File file2 = new File(index.getPathWrite()+"\\test.csv");
         try {
             // create FileWriter object with file as parameter
             FileWriter outputfile = new FileWriter(file2);
@@ -208,7 +228,7 @@ public class Clustering {
             CSVWriter writer2 = new CSVWriter(outputfile);
 
             // adding header to csv
-            String[] header = new String[sss.get(0).length];
+            String[] header = new String[/*sss.get(0)*/ss1.length];
             int a=0;
             for(int i=0;i<header.length;i++) {
                 a=a+1;
@@ -216,10 +236,10 @@ public class Clustering {
             }
             writer2.writeNext(header);
 
-            for(int i=0;i<10;i++){
+          /*  for(int i=0;i<10;i++){
                 writer2.writeNext(sss.get(i));
-            }
-            /*
+            }*/
+
             writer2.writeNext(ss1);
             writer2.writeNext(ss2);
             writer2.writeNext(ss3);
@@ -230,7 +250,7 @@ public class Clustering {
             writer2.writeNext(ss8);
             writer2.writeNext(ss9);
             writer2.writeNext(ss10);
-*/
+
 
             // closing writer connection
             writer2.close();
@@ -241,23 +261,27 @@ public class Clustering {
         }
 
         CSVLoader loader = new CSVLoader();
-        loader.setSource(new File(index.pathWrite+"\\test.csv"));
+        loader.setSource(new File(index.getPathWrite()+"\\test.csv"));
         Instances data = loader.getDataSet();
 
         // save ARFF
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);
-        saver.setFile(new File(index.pathWrite+"\\tests.arff"));
+        saver.setFile(new File(index.getPathWrite()+"\\tests.arff"));
         saver.writeBatch();
     }
 
 
-
+    /**
+     * uses kmeans clustering to assign each document to 1 cluster according to the euk distance
+     * @param x number of clusters
+     * @throws Exception
+     */
     public static void cluster(int x) throws Exception {
         createCSV();
         BufferedReader breader;
         breader = new BufferedReader(new FileReader(
-                index.pathWrite+"\\tests.arff"));
+                index.getPathWrite()+"\\tests.arff"));
         Instances Train = new Instances(breader);
         SimpleKMeans kMeans = new SimpleKMeans();
         kMeans.setSeed(10);
@@ -268,7 +292,7 @@ public class Clustering {
         int i2 = 0;
         clust = new HashMap<>();
         for (int clusterNum : assignments) {
-            Document docu = query.searcher.doc(docsid[i2]);
+            Document docu = query.getSearcher().doc(docsid[i2]);
             clust.put(docu.get("Topic"), clusterNum);
             i2++;
         }
@@ -281,5 +305,17 @@ public class Clustering {
             clusters.get(value).add(name);
         }
 
+    }
+
+    public static ArrayList<ArrayList<String>> getClusters() {
+        return clusters;
+    }
+
+    public static int[] getDocsid() {
+        return docsid;
+    }
+
+    public static void setDocsid(int[] docsid) {
+        Clustering.docsid = docsid;
     }
 }

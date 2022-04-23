@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2248ce3c-c3cf-404c-a05d-c627683578a3" name="Changes" comment="" />
+    <list default="true" id="2248ce3c-c3cf-404c-a05d-c627683578a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/rest-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_1.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/segments_1" beforeDir="false" afterPath="$PROJECT_DIR$/b/segments_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/b/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/tests.arff" beforeDir="false" afterPath="$PROJECT_DIR$/b/tests.arff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Clustering.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Clustering.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Indexing.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Indexing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/restservice/Query.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/Clustering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/Clustering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/Indexing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/Indexing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/restservice/GreetingControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/restservice/GreetingControllerTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +73,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -127,10 +157,15 @@
       <workItem from="1650632386863" duration="878000" />
       <workItem from="1650633474107" duration="25000" />
       <workItem from="1650634001544" duration="355000" />
+      <workItem from="1650717120525" duration="249000" />
+      <workItem from="1650717386274" duration="4952000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -19,17 +19,24 @@ import java.nio.file.Paths;
 
 public class Indexing {  //singleton
 
-    FieldType Main=new FieldType();
-    FieldType Topic=new FieldType();
-    String pathRead;
-    String pathWrite;
-    Directory index;
-    IndexWriter indexWriter;
+    private FieldType Main=new FieldType();
+    private FieldType Topic=new FieldType();
+    private String pathRead;
+    private String pathWrite;
+    private Directory index;
+    private IndexWriter indexWriter;
     private static volatile Indexing instance = null;
 
     private Indexing(){
         setFields();
     }
+
+    /**
+     * if no Objects -> creates an Object and returns it
+     * if an object is already created -> returns that object
+     * (singleton)
+     * @return The only Object of the class
+     */
     public static Indexing getInstance() {
         if (instance == null) {
             synchronized(Indexing.class) {
@@ -42,6 +49,9 @@ public class Indexing {  //singleton
         return instance;
     }
 
+    /**
+     * sets the Fields to save important statistics about the Terms
+     */
     private void setFields(){
         Main.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS); //enable storing the reuired statistics
         Main.setStored(true);
@@ -52,7 +62,12 @@ public class Indexing {  //singleton
         Topic.setStored(true);
     }
 
-
+    /**
+     * Indexes the document, analyzes it and adds it to the Index
+     * @param content the main part of the document
+     * @param titel the title of the documenet
+     * @throws IOException
+     */
     private void addDoc(String content, String titel) throws IOException {
         Document doc = new Document();
         Topic.setStored(true);
@@ -63,6 +78,10 @@ public class Indexing {  //singleton
     }
 
 
+    /**
+     * creates an Analyzer (StandardTokenizer/Lowercase/stopwords removal/portertemming/keeps URLs)
+     * @return Englisch Analyzer
+     */
     public static Analyzer analyzer() {
         /*
 		 * add config as parameter
@@ -80,17 +99,29 @@ public class Indexing {  //singleton
         return new EnglishAnalyzer();
     }
 
+    /**
+     * changes the read/write directories
+     * @param pathW new Write Path
+     * @param pathR new Read Path
+     */
     public void setDirectory(String pathW,String pathR) {
         pathWrite=pathW;
         pathRead=pathR;
     }
 
+    /**
+     * creates an Index Writer with the Analyzer of the method analyzer()
+     * @throws IOException
+     */
     public void CreateWriter() throws IOException {
         index = FSDirectory.open(Paths.get(pathWrite)); //makes a new directory for storing the index
         IndexWriterConfig config = new IndexWriterConfig(analyzer());
         indexWriter = new IndexWriter(index, config);
     }
 
+    /**
+     * deletes the Index and it's Files
+     */
     public void clearDirectory() {
         File dir = new File(pathWrite);
         File[] files = dir.listFiles();
@@ -102,6 +133,10 @@ public class Indexing {  //singleton
     }
 
 
+    /**
+     * Indexes, anlayzes all the Documents in the Read Directory and adds them to the Index
+     * @throws IOException
+     */
     public void addFilesToIndex() throws IOException {
         File dir = new File(pathRead);
         File[] files = dir.listFiles();
@@ -146,4 +181,13 @@ public class Indexing {  //singleton
         }
     }
     */
+
+    public Directory getIndex() {
+        return index;
+    }
+
+    public String getPathWrite() {
+        return pathWrite;
+    }
+
 }
