@@ -1,2 +1,0 @@
-ADOdb Lite is a very small, fast ADOdb-compatible database abstraction library written in PHP. 
-It uses less than 100 kB of system RAM for each HTTP access compared to over 640 kB for ADOdb. After a benchmark ADOdb Lite is also 300% faster than the ADOdb library.

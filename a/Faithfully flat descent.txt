@@ -1,4 +1,0 @@
-Faithfully flat descent is a technique from algebraic geometry, allowing one to draw conclusions about objects on the target of a faithfully flat morphism. Such morphisms, that are flat and surjective, are common, one example coming from an open cover.
-In practice, from an affine point of view, this technique allows one to prove some statement about a ring or scheme after faithfully flat base change.
-"Vanilla" faithfully flat descent is generally false; instead, faithfully flat descent is valid under some finiteness conditions (e.g., quasi-compact or locally of finite presentation).
-A faithfully flat descent is a special case of Beck's monadicity theorem.

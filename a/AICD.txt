@@ -1,6 +1,0 @@
-The acronym AICD may refer to:
-
-Automated Implantable Cardioverter-Defibrillator
-Amyloid precursor protein Intracellular Cytoplasmic/C-terminal Domain, the smaller cleavage product of APP by gamma-secretase
-Australian Institute of Company Directors, an organisation supporting company directors in Australia
-Activation-induced cell death (AICD), important for maintaining T cell homeostasis of the immune system. Autoreactive T cells undergo apoptosis through AICD both from the thymus and periphery

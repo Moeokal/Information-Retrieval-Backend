@@ -1,1 +1,0 @@
-The discounted payback period (DPB) is the amount of time that it takes (in years) for the initial cost of a project to equal to discounted value of expected cash flows, or the time it takes to break even from an investment. It is the period in which the cumulative net present value of a project equals zero.

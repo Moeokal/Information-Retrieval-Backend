@@ -1,2 +1,0 @@
-Fixed Dialing Number (FDN) is a service mode of a GSM mobile phone's SIM card. Numbers are added to the FDN list, and when activated, FDN restricts outgoing calls to only those numbers listed, or to numbers with certain prefixes. A notable exception is that emergency calls to 000, 112, 911, 999 and the like are exempt. Incoming calls are not blocked by FDN.One practical application of FDN is for parents to restrict the phone numbers their children can dial. The SIM card's PIN2 must be entered beforehand or when applying such settings.
-

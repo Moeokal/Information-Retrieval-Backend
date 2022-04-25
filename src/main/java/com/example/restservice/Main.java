@@ -39,6 +39,20 @@ public class Main {
             x=2;
         }
         Clustering.cluster(x);
+
+        for(int id: Clustering.getDocsid()) {//list them
+            String name = query.getSearcher().doc(id).get("Topic");
+            if(name.equals("Abdullah Al Shami")){
+                for(int i=0;i<x;i++) {
+                    if (Clustering.getClusters().get(i).contains(name)) {
+                        Clustering.getClusters().get(i).remove(name);
+                    }
+                }
+            }
+
+        }
+
+
         return Clustering.getClusters();
     }
 
@@ -53,7 +67,9 @@ public class Main {
         for(int id: Clustering.getDocsid()) {//list them
             String name = query.getSearcher().doc(id).get("Topic");
             if(Clustering.getClusters().get(y-1).contains(name)) {
-                z.add(name);
+                if(!(name.equals("Abdullah Al Shami"))){
+                    z.add(name);
+                }
             }
         }
         return z;

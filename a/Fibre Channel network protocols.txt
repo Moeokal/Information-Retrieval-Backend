@@ -1,2 +1,0 @@
-Communication between devices in a fibre channel network uses different elements of Fibre Channel standards.
-

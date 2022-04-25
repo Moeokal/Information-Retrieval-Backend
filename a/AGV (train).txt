@@ -1,5 +1,0 @@
-The AGV (acronym for French: Automotrice à grande vitesse) is a standard gauge, high-speed, electric multiple-unit train designed and built by Alstom.
-Alstom offers the AGV in configurations from seven to fourteen carriages, seating 245 to 446 persons. The trains are constructed from units comprising three cars (each with one transformer and two traction electronics packages located underneath the cars) and single-car driver-trailers. The maximum commercial speed is 360 km/h.
-Design of the train took place through the early 2000s, with a prototype, "Pégase", produced in 2008. Italian transport company NTV ordered 25 trains in 2008 (classified as AGV 575) with services beginning in 2012.
-According to Alstom, the advantages of the AGV are: increased seating area per train length (compared to a single-deck TGV); safety and maintenance advantages of the Jacobs bogie articulation design as well as higher energy efficiency from permanent-magnet synchronous motors.
-

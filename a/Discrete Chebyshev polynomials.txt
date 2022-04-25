@@ -1,1 +1,0 @@
-In mathematics, discrete Chebyshev polynomials, or Gram polynomials, are a type of discrete orthogonal polynomials used in approximation theory, introduced by Pafnuty Chebyshev (1864) and rediscovered by Gram (1883).

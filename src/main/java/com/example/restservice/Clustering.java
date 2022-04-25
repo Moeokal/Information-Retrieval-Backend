@@ -32,18 +32,6 @@ public class Clustering {
 
     private static Set<String> terms = new HashSet<>();
 
-    private static RealVector v1=null;
-    private static RealVector v2=null;
-    private static RealVector v3=null;
-    private static RealVector v4=null;
-    private static RealVector v5=null;
-    private static RealVector v6=null;
-    private static RealVector v7=null;
-    private static RealVector v8=null;
-    private static RealVector v9=null;
-    private static RealVector v10=null;
-
-
     /**
      * cleares and makes the clusters ready for the next search
      */
@@ -62,7 +50,6 @@ public class Clustering {
      * calculates the term Frequencies of the document
      * @param docId ID of the document
      * @return a realvector that saves the statistics of the document
-     * @throws IOException
      */
     static RealVector getTermFrequencies(int docId)
             throws IOException {
@@ -109,7 +96,6 @@ public class Clustering {
     /**
      * adds all the terms of the document to the list of all terms
      * @param docId the document to check
-     * @throws IOException
      */
     static void addTerms(int docId) throws IOException {
         Terms vector = query.getReader().getTermVector(docId, "Main");
@@ -125,98 +111,22 @@ public class Clustering {
     /**
      * Creates a csv file of all the documents and their term frequnecies for each term from the list
      * of all terms to represent the docs as vectors in a n-dimensional room with n=number of terms
-     * @throws IOException
      */
     public static void createCSV() throws IOException {
-/*
+
         ArrayList<String[]> sss= new ArrayList<>(10);
         for(int i=0;i<10;i++){
             addTerms(docsid[i]);
+        }
+        for(int i=0;i<10;i++){
             RealVector v = getTermFrequencies(docsid[i]);
             double[] arr = v.toArray();
             String s = Arrays.toString(arr);
             s=s.substring(1, s.length()-1);
             String[] ss = s.split(", ");
             sss.add(ss);
-        }*/
+        }
 
-
-        addTerms(docsid[0]);
-        v1 = getTermFrequencies(docsid[0]);
-        double[] arr1 = v1.toArray();
-        String s1 = Arrays.toString(arr1);
-        s1=s1.substring(1, s1.length()-1);
-        String[] ss1 = s1.split(", ");
-
-
-        addTerms(docsid[1]);
-        addTerms(docsid[2]);
-        addTerms(docsid[3]);
-        addTerms(docsid[4]);
-        addTerms(docsid[5]);
-        addTerms(docsid[6]);
-        addTerms(docsid[7]);
-        addTerms(docsid[8]);
-        addTerms(docsid[9]);
-
-        v2 = getTermFrequencies(docsid[1]);
-        v3 = getTermFrequencies(docsid[2]);
-        v4 = getTermFrequencies(docsid[3]);
-        v5 = getTermFrequencies(docsid[4]);
-        v6 = getTermFrequencies(docsid[5]);
-        v7 = getTermFrequencies(docsid[6]);
-        v8 = getTermFrequencies(docsid[7]);
-        v9 = getTermFrequencies(docsid[8]);
-        v10 = getTermFrequencies(docsid[9]);
-
-
-        double[] arr2 = v2.toArray();
-        double[] arr3 = v3.toArray();
-        double[] arr4 = v4.toArray();
-        double[] arr5 = v5.toArray();
-        double[] arr6 = v6.toArray();
-        double[] arr7 = v7.toArray();
-        double[] arr8 = v8.toArray();
-        double[] arr9 = v9.toArray();
-        double[] arr10 = v10.toArray();
-
-
-
-        String s2 = Arrays.toString(arr2);
-        s2=s2.substring(1, s2.length()-1);
-        String[] ss2 = s2.split(", ");
-
-        String s3 = Arrays.toString(arr3);
-        s3=s3.substring(1, s3.length()-1);
-        String[] ss3 = s3.split(", ");
-
-        String s4 = Arrays.toString(arr4);
-        s4=s4.substring(1, s4.length()-1);
-        String[] ss4 = s4.split(", ");
-
-        String s5 = Arrays.toString(arr5);
-        s5=s5.substring(1, s5.length()-1);
-        String[] ss5 = s5.split(", ");
-
-        String s6 = Arrays.toString(arr6);
-        s6=s6.substring(1, s6.length()-1);
-        String[] ss6 = s6.split(", ");
-
-        String s7 = Arrays.toString(arr7);
-        s7=s7.substring(1, s7.length()-1);
-        String[] ss7 = s7.split(", ");
-
-        String s8 = Arrays.toString(arr8);
-        s8=s8.substring(1, s8.length()-1);
-        String[] ss8 = s8.split(", ");
-
-        String s9 = Arrays.toString(arr9);
-        s9=s9.substring(1, s9.length()-1);
-        String[] ss9 = s9.split(", ");
-
-        String s10 = Arrays.toString(arr10);
-        s10=s10.substring(1, s10.length()-1);
-        String[] ss10 = s10.split(", ");
 
 
         File file2 = new File(index.getPathWrite()+"\\test.csv");
@@ -228,7 +138,7 @@ public class Clustering {
             CSVWriter writer2 = new CSVWriter(outputfile);
 
             // adding header to csv
-            String[] header = new String[/*sss.get(0)*/ss1.length];
+            String[] header = new String[sss.get(0).length];
             int a=0;
             for(int i=0;i<header.length;i++) {
                 a=a+1;
@@ -236,21 +146,9 @@ public class Clustering {
             }
             writer2.writeNext(header);
 
-          /*  for(int i=0;i<10;i++){
+           for(int i=0;i<10;i++){
                 writer2.writeNext(sss.get(i));
-            }*/
-
-            writer2.writeNext(ss1);
-            writer2.writeNext(ss2);
-            writer2.writeNext(ss3);
-            writer2.writeNext(ss4);
-            writer2.writeNext(ss5);
-            writer2.writeNext(ss6);
-            writer2.writeNext(ss7);
-            writer2.writeNext(ss8);
-            writer2.writeNext(ss9);
-            writer2.writeNext(ss10);
-
+            }
 
             // closing writer connection
             writer2.close();
@@ -275,7 +173,6 @@ public class Clustering {
     /**
      * uses kmeans clustering to assign each document to 1 cluster according to the euk distance
      * @param x number of clusters
-     * @throws Exception
      */
     public static void cluster(int x) throws Exception {
         createCSV();

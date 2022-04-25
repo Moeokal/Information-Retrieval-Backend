@@ -1,5 +1,5 @@
-com/example/restservice/MainController.java
- com.example.restservice.MainController
+com/example/restservice/Query.java
+ com.example.restservice.Query
 com/example/restservice/Indexing.java
  com.example.restservice.Indexing
 com/example/restservice/RestServiceApplication.java
@@ -8,5 +8,5 @@ com/example/restservice/Clustering.java
  com.example.restservice.Clustering
 com/example/restservice/Main.java
  com.example.restservice.Main
-com/example/restservice/Query.java
- com.example.restservice.Query
+com/example/restservice/MainController.java
+ com.example.restservice.MainController
