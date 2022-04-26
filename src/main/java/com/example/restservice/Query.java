@@ -54,7 +54,6 @@ public class Query {
 
     /**
      * prepares the system for the next query (cleares clusters, sets the Index path to read from)
-     * @throws IOException
      */
     private void setup() throws IOException {
         clearClust();
@@ -66,8 +65,6 @@ public class Query {
      * searches for the query and ranks the top 10 hits according to their sim scores using the bm25 similarity method
      * @param querys the Query
      * @return a list of the documents IDs ranked from 1st to last
-     * @throws ParseException
-     * @throws IOException
      */
     private int[] search_rank(String querys) throws ParseException, IOException {
         QueryParser parser = new QueryParser("Main", Indexing.analyzer());
@@ -87,8 +84,6 @@ public class Query {
      * preforms a Query and finds the Top 10 Hits (Documents) after it prepares the System for a new Query
      * @param querys the Query
      * @return a list of the documents IDs ranked from 1st to last
-     * @throws IOException
-     * @throws ParseException
      */
     public int[] query(String querys) throws IOException, ParseException {
         setup();

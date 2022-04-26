@@ -13,7 +13,6 @@ public class Main {
      * the docs from the read dir to it
      * @param s1 write path
      * @param s2 read path
-     * @throws IOException
      */
     public static void button1continue(String s1, String s2) throws IOException {
         index.setDirectory(s1, s2);
@@ -29,7 +28,6 @@ public class Main {
      * @param querys the query
      * @param x number of clusters between 2 and 5 . else 2
      * @return the clusters
-     * @throws Exception
      */
     public static ArrayList<ArrayList<String>> clusterFront(String querys,int x) throws Exception {
 
@@ -44,9 +42,7 @@ public class Main {
             String name = query.getSearcher().doc(id).get("Topic");
             if(name.equals("Abdullah Al Shami")){
                 for(int i=0;i<x;i++) {
-                    if (Clustering.getClusters().get(i).contains(name)) {
-                        Clustering.getClusters().get(i).remove(name);
-                    }
+                    Clustering.getClusters().get(i).remove(name);
                 }
             }
 
@@ -60,7 +56,6 @@ public class Main {
      * lists the clusters documents to show the result to the user
      * @param y the number of the cluster
      * @return list of ranked docs
-     * @throws IOException
      */
     public static ArrayList<String> listCluster(int y) throws IOException {
         ArrayList<String> z = new ArrayList<>();

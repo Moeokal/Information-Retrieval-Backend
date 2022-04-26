@@ -111,7 +111,6 @@ public class Indexing {  //singleton
 
     /**
      * creates an Index Writer with the Analyzer of the method analyzer()
-     * @throws IOException
      */
     public void CreateWriter() throws IOException {
         index = FSDirectory.open(Paths.get(pathWrite)); //makes a new directory for storing the index
@@ -135,7 +134,6 @@ public class Indexing {  //singleton
 
     /**
      * Indexes, anlayzes all the Documents in the Read Directory and adds them to the Index
-     * @throws IOException
      */
     public void addFilesToIndex() throws IOException {
         File dir = new File(pathRead);
